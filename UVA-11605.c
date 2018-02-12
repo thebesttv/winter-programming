@@ -30,7 +30,6 @@ using namespace std;
 typedef long long LL;
 typedef long long unsigned LLU;
 
-const int MAX=120;
 int a,b,c,k;
 
 inline double P(double x, double n){
