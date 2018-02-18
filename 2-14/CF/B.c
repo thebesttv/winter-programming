@@ -30,6 +30,45 @@ using namespace std;
 typedef long long LL;
 typedef long long unsigned LLU;
 
+int main(void){
+  int n; scanf("%d",&n);
+  if(n>18*2) {printf("-1\n"); return 0;}
+
+  while(n>=2) putchar('8'), n-=2;
+  if(n) putchar('6');
+  putchar('\n');
+}
+
+/*
+int n; char rec[40];
+
+bool dfs(int cur, int sum){
+  if(sum==n) return true;
+  if(cur>=18) return false;
+  if(sum+2*(18-cur)<n) return false;
+
+  if(sum+2<=n){
+    rec[cur]='8';
+    if(dfs(cur+1,sum+2)) return true;
+  }
+  rec[cur]='4';
+  if(dfs(cur+1,sum+1)) return true;
+  rec[cur]=0; return false;
+}
+
+int main(void){
+  scanf("%d",&n);
+  if(!n) {printf("1\n"); return 0;}
+  if(n>36) {printf("-1\n"); return 0;}
+
+  dfs(0,0);
+  printf("%s\n",rec);
+
+  return 0;
+}
+*/
+
+/*
 const int a[10]={1,0,0,0,1,0,1,0,2,1};
 int n,rec[20],tail;
 int ava[]={0,4,6,8,9},tot=5;
@@ -60,3 +99,4 @@ int main(void){
 
   return 0;
 }
+*/

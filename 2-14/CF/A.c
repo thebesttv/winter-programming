@@ -37,6 +37,27 @@ int main(void){
   scanf("%d%d",&n,&m);
   FORR(i,1,n) cin >> a[i];
   FORR(i,1,m) cin >> b[i];
+
+  LL ansMin=1LL<<62;
+  FORR(k,1,n){  //选a[k]
+    LL tMax=-(1LL<<62);
+    FORR(i,1,n) if(i!=k) FORR(j,1,m)  //在剩下的中选出最大的
+      tMax=max(tMax,a[i]*b[j]);
+    ansMin=min(ansMin,tMax);
+  }
+  cout << ansMin << endl;
+
+  return 0;
+}
+
+/*
+const int MAX=100;
+int n,m; LL a[MAX],b[MAX];
+
+int main(void){
+  scanf("%d%d",&n,&m);
+  FORR(i,1,n) cin >> a[i];
+  FORR(i,1,m) cin >> b[i];
   sort(a+1,a+1+n); sort(b+1,b+1+m);
   
   LL ans;
@@ -55,24 +76,6 @@ int main(void){
   }
 
   cout << ans << endl;
-
-  return 0;
-}
-
-/*
-const int MAX=100;
-int n,m;
-priority_queue<int> a,b;
-
-int main(void){
-  scanf("%d%d",&n,&m);
-  int t;
-  FORR(i,1,n) scanf("%d",&t), a.push(t);
-  FORR(i,1,m) scanf("%d",&t), b.push(t);
-  a.pop();
-  //printf("%lld\n",1LL*a.top()*b.top());
-  cout << 1LL*a.top()*b.top();
-
 
   return 0;
 }
